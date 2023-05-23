@@ -15,46 +15,69 @@
     <a-scene gltf-exporter>
         <a-assets>
             <a-asset-item id="fish" src="3d/fish.glb"></a-asset-item>
-            <img id="img1" src="img/scene.jpg">
-            <img id="img2" src="img/html.jpg">
-            <img id="img3" src="img/primitive.jpg">
-            <img id="img4" src="img/primitiveBinary.jpg">
-            <img id="img5" src="img/two.jpg">
+            <img id="img1" src="img/CAM1.jpg">
+            <img id="img2" src="img/CAM2.jpg">
+            <img id="img3" src="img/CAM3.jpg">
+            <img id="img4" src="img/CAM4.jpg">
+            <img id="img5" src="img/CAM5.jpg">
             <img id="img6" src="img/3dModel.jpg">
+            <!--sphorb-->
+            <a-asset-item id="bb02" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/sphorb1.glb?v=1655710163279"></a-asset-item>
+            <a-asset-item id="bb03" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/sphorb2.glb?v=1655710178528"></a-asset-item>
+            <a-asset-item id="bb04" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/sphorb3.glb?v=1655710192379"></a-asset-item>
+            <a-asset-item id="bb05" src="https://cdn.glitch.global/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538/sphorb4.glb?v=1655710213868"></a-asset-item>
+
         </a-assets>
 
+        <!--sphorb-->
+        <a-entity id="redbzz" mixin="rot0" position="-10 5 -10" rotation="0 0 0" scale=".5 .5 .5" static-body>
+            <a-entity id="orb1" gltf-model="#bb02" mixin="rot0" position="0 0 0" rotation="0 0 0" scale="1000 1000 1000" static-body></a-entity>
+            <a-entity id="orb2" gltf-model="#bb03" mixin="rot1" position="0 0 0" rotation="0 0 0" scale="1000 1000 1000" static-body
+                      animation__rotation__xx="property: rotation; dir: forward; dur: 9000;
+                    repeat: indefinite; easing: linear; loop: true; to: -360 -360 -360"></a-entity>
+            <a-entity id="orb3" gltf-model="#bb04" mixin="rot1" position="0 0 0" rotation="0 0 0" scale="1000 1000 1000" static-body
+                      animation__rotation__yy="property: rotation; dir: forward; dur: 8000;
+                    repeat: indefinite; easing: linear; loop: true; to: 360 360 360"></a-entity>
+            <a-entity id="orb4" gltf-model="#bb05" mixin="rot1" position="0 0 0" rotation="0 0 0" scale="1000 1000 1000" static-body
+                      animation__rotation__zz="property: rotation; dir: forward; dur: 12000;
+                    repeat: indefinite; easing: linear; loop: true; to: -360 -360 -360"></a-entity>
+
+        </a-entity>
+        <!--sphorb-end-->
 
         <a-entity position="0 0 0" cursor="fuse: false; rayOrigin: mouse;" raycaster="objects: .navButton">
         </a-entity>
 
 
         <a-entity id="export-scene" class="navButton" geometry="primitive: plane;"
-            material="src: #img1; transparent: true; opacity: 1; alpha-test: 0.5" position="-2.5 2.5 -2"
-            scale="0.5 0.5 0.5"></a-entity>
+                  material="src: #img1; transparent: true; opacity: 1; alpha-test: 0.5" position="-5 5 -2"
+                  scale="4 4 4"></a-entity>
 
         <a-entity id="export-html" class="navButton" geometry="primitive: plane;"
-            material="src: #img2; transparent: true; opacity: 1; alpha-test: 0.5" position="-1.5 2.5 -2"
-            scale="0.5 0.5 0.5"></a-entity>
+                  material="src: #img2; transparent: true; opacity: 1; alpha-test: 0.5" position="-2.5 5 -2"
+                  scale="4 4 4"></a-entity>
 
         <a-entity id="primitive" class="navButton" geometry="primitive: plane;"
-            material="src: #img3; transparent: true; opacity: 1; alpha-test: 0.5" position="-0.5 2.5 -2"
-            scale="0.5 0.5 0.5"></a-entity>
+                  material="src: #img3; transparent: true; opacity: 1; alpha-test: 0.5" position="0 5 -2"
+                  scale="4 4 4"></a-entity>
 
         <a-entity id="primitiveBinary" class="navButton" geometry="primitive: plane;"
-            material="src: #img4; transparent: true; opacity: 1; alpha-test: 0.5" position="0.5 2.5 -2"
-            scale="0.5 0.5 0.5"></a-entity>
-        
-            <a-entity id="exportTwo" class="navButton" geometry="primitive: plane;"
-            material="src: #img5; transparent: true; opacity: 1; alpha-test: 0.5" position="1.5 2.5 -2"
-            scale="0.5 0.5 0.5"></a-entity>
-        
-            <a-entity id="export3d" class="navButton" geometry="primitive: plane;"
-            material="src: #img6; transparent: true; opacity: 1; alpha-test: 0.5" position="2.5 2.5 -2"
-            scale="0.5 0.5 0.5"></a-entity>
+                  material="src: #img4; transparent: true; opacity: 1; alpha-test: 0.5" position="2.5 5 -2"
+                  scale="4 4 4"></a-entity>
+
+
+        <a-entity id="exportTwo" class="navButton" geometry="primitive: plane;"
+                  material="src: #img5; transparent: true; opacity: 1; alpha-test: 0.5" position="5 5 -2"
+                  scale="4 4 4"></a-entity>
+
+
+        <a-entity id="export3d" class="navButton" geometry="primitive: plane;"
+                  material="src: #img6; transparent: true; opacity: 1; alpha-test: 0.5" position="2.5 2.5 -2"
+                  scale="0.5 0.5 0.5"></a-entity>
 
 
 
-        <a-entity id="emb" width="4" height="4" side="double" position="0 1 -2" htmlembed>
+        <a-entity id="emb" width="20" height="20" side="double" position="0 10 -8" htmlembed>
             <div class="notepad">
 
                 <div id="content" class="paper" contenteditable="true">
